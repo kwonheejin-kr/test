@@ -1,0 +1,33 @@
+ESP32_SmartFarm/
+├── include/                  # 모든 헤더 파일
+│   ├── Config.h
+│   ├── State.h
+│   └── ui_components.h
+├── src/                     # 소스 코드
+│   ├── system/             # 시스템 관련
+│   │   ├── error_handler.cpp
+│   │   ├── error_handler.h
+│   │   └── system_monitor.cpp
+│   ├── sensors/            # 센서 관련
+│   │   ├── sensors.cpp
+│   │   └── sensors.h
+│   ├── ui/                 # UI 관련
+│   │   ├── ui_events.cpp
+│   │   ├── ui_events.h
+│   │   └── ui_manager.cpp
+│   ├── audio/             # 오디오 관련
+│   │   ├── audio_manager.cpp
+│   │   └── audio_manager.h
+│   └── storage/           # 저장소 관련
+│       ├── sd_manager.cpp
+│       └── sd_manager.h
+├── assets/                 # 리소스 파일
+│   ├── sounds/
+│   │   └── touch.wav
+│   └── images/
+│       └── background.png
+├── docs/                   # 문서
+│   └── README.md
+├── libraries/              # 외부 라이브러리
+├── tools/                  # 유틸리티 스크립트
+└── ESP32_SmartFarm.ino    # 메인 스케치
