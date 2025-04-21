@@ -1,0 +1,44 @@
+# ESP32-Arduino UART ud1b5uc2e0 ud504ub85cuc81dud2b8
+
+## ubcc0uacbd uc774ub825
+
+### 2025-04-01 v1.6.2
+1. **SHT31 uc628uc2b5ub3c4 uc13cuc11c uc815ud655ub3c4 ud5a5uc0c1**
+   - ub2e4uc911 uce21uc815uac12 ud3c9uade0ud654 uae30ub2a5 ucd94uac00 (5uac1c uc0d8ud50c uc2acub77cuc774ub529 uc708ub3c4 uc801uc6a9)
+   - uc774uc0c1uce58 uac10uc9c0 ubc0f ud544ud130ub9c1 ub85cuc9c1 uad6cud604 (uc628ub3c4 5ub3c4, uc2b5ub3c4 10% uc774uc0c1 ucc28uc774 ubc1cuc0dd uc2dc uc774uc0c1uce58ub85c ud310ub2e8)
+   - SHT31 uc13cuc11c uce21uc815uac12 ubcf4uc815 ub85cuc9c1 ucd94uac00 (ubc94uc704 uc81cud55c: uc628ub3c4 -40~125ub3c4, uc2b5ub3c4 0~100%)
+
+### 2025-04-01 v1.6.1
+1. **uc13cuc11c ub514uc2a4ud50cub808uc774 ubd80ubd84 uac1cuc120**
+   - uc774uc804 uc22buc790uac00 ud654uba74uc5d0 uc7a0uc7acud558uace0 uc0c8 uc22buc790uc640 uaca8uccd0uc11c ubcf4uc774ub294 ubb38uc81c ud574uacb0
+   - uac01 uc22buc790 ud45cuc2dc uc601uc5educ744 uc5c5ub370uc774ud2b8 uc804uc5d0 ud074ub9acuc5b4ud558ub294 ubc29uc2dd uc801uc6a9
+
+2. **UI uacf5uac04 ud6a8uc728ud654**
+   - ud654uba74 ud06cuae30(320x240)uc5d0 ub9deuac8c ubaa8ub4e0 UI uc694uc18cub97c uc801uc808ud788 ubc30uce58
+   - 'Device Status' ub808uc774ube14 ubc0f uc7a5uce58 uc774ub984 uc81cuac70ud558uc5ec uacf5uac04 ud655ubcf4
+   - uc7a5uce58 uc0c1ud0dcub97c ON/OFF ud45cuc2dcub9ccuc73cub85c ub2e8uc21cud654ud558uc5ec uac00ub3c5uc131 ud5a5uc0c1
+
+### 2025-04-01 v1.6.0
+1. **UI uac1cuc120**
+   - Control uc601uc5ed uc644uc804 uc81cuac70
+   - uc804uccb4uc801uc778 ub514uc790uc778 uc5c5uadf8ub808uc774ub4dc - ub2e4ud06cubaa8ub4dc uc2a4ud0c0uc77c UI uc801uc6a9
+   - ub77cuc6b4ub4dc ucf54ub108 uce74ub4dc uc2a4ud0c0uc77cuc758 uc139uc158 uc801uc6a9
+   - uc2ecud50cud55c uc544uc774ucf58 ucd94uac00 (uc628ub3c4uacc4, ubb3cubc29uc6b8, uc2ecuc7a5)
+   - uc628ub3c4 ubc0f uc2b5ub3c4 uac8cuc774uc9c0 uadf8ub798ud504 ucd94uac00
+   - uc2ecubc15uc218 uac10uc9c0 uc2dc uc2ecuc7a5 uc544uc774ucf58 uae5cubc15uc784 uc560ub2c8uba54uc774uc158 ucd94uac00
+
+2. **ub514ubc14uc774uc2a4 uc0c1ud0dc ud45cuc2dc uc601uc5ed uac1cuc120**
+   - uae30uae30 uc0c1ud0dc(ud32c, LED, uac00uc2b5uae30)ub97c uce74ub4dc ubc30uce58ub85c ubcc0uacbd
+   - uc0c1ud0dc ON/OFFuc5d0 ub530ub978 uc2dcuac01uc801 ud53cub4dcubc31 uac15ud654
+   - uc2e4uc2dcuac04 uc0c1ud0dc ubcc0uacbduc744 uc989uc2dc ud45cuc2dcud558ub294 UI ubc29uc2dd uac1cuc120
+ 
+3. **uc0c9uc0c1 uccb4uacc4 uc815ub9ac**
+   - UI uc804ubc18uc5d0 uc0acuc6a9ub418ub294 uc0c9uc0c1 uccb4uacc4 uc815ub9ac ubc0f ud45cuc900ud654
+   - ud5e4ub354 ubc30uacbduc0c9, uce74ub4dc ubc30uacbduc0c9 ub4f1 ucd94uac00
+   - uc0c1ud669uc5d0 ub530ub978 uc628uc2b5ub3c4 uac8cuc774uc9c0 uc0c9uc0c1 ubcc0ud654 uc801uc6a9
+
+### 2025-04-01 v1.5.0
+1. **LCD TFT MOSI ud540 ubcc0uacbd**
+   - GPIO13uc5d0uc11c GPIO23uc73cub85c ubcc0uacbd (ube44ud589uac70ub9ac uc13cuc11c SHUT ud540uacfc ucda9ub3cc ud68cud53c)
+   - esp32_uart.ino ud30cuc77cuc758 ud55cuae00 uc778ucf54ub529 ubb38uc81c uc218uc815
+   - User_Setup.h ud30cuc77c uc5c5ub370uc774ud2b8 - LCD TFT SPI ud540 uad6cuc131 uc870uc815

@@ -1,0 +1,56 @@
+# ud504ub85cuc81dud2b8 ud558ub4dcuc6e8uc5b4 uc5f0uacb0 ud540 ubc88ud638 ub9e4ud551
+
+## ESP32 - Arduino R4 ud575uc2ec ud1b5uc2e0 uc5f0uacb0 (UART)
+- ESP32 TX u2192 Arduino R4 RX (ud540 0)
+- ESP32 RX u2192 Arduino R4 TX (ud540 1)
+- uacf5ud1b5 GND uc5f0uacb0 ud544uc218
+
+## Arduino R4 UNO WiFi ud540 uc5f0uacb0
+- **ub9b4ub808uc774 uc81cuc5b4**
+  - FAN_PIN: D2 (ud32c ub9b4ub808uc774)
+  - LED_PIN: D3 (LED ub9b4ub808uc774)
+  - HUMID_PIN: D4 (uac00uc2b5uae30 ub9b4ub808uc774)
+
+- **ubc84ud2bc uc785ub825**
+  - BTN_FAN_PIN: D5 (ud32c uc81cuc5b4 ubc84ud2bc, INPUT_PULLUP)
+  - BTN_LED_PIN: D6 (LED uc81cuc5b4 ubc84ud2bc, INPUT_PULLUP)
+  - BTN_HUMID_PIN: D7 (uac00uc2b5uae30 uc81cuc5b4 ubc84ud2bc, INPUT_PULLUP)
+  - BTN_AUTO_PIN: D8 (uc790ub3d9/uc218ub3d9 ubaa8ub4dc uc804ud658 ubc84ud2bc, INPUT_PULLUP)
+
+## ESP32 ud540 uc5f0uacb0
+- **ub514uc2a4ud50cub808uc774 ubc31ub77cuc774ud2b8**: GPIO 5 (HIGH uc0c1ud0dcuc720uc9c0)
+- **I2C uc5f0uacb0**:
+  - SDA: GPIO 21
+  - SCL: GPIO 22
+- **uc13cuc11c uc5f0uacb0**:
+  - VL53LOX_XSHUT_PIN: GPIO 13 (ToF ub514uc2a4ud134uc2a4 uc13cuc11c)
+- **uc624ub514uc624 uc5f0uacb0**:
+  - BCLK: GPIO 33
+  - LRCLK: GPIO 19
+  - DOUT: GPIO 18
+
+## ESP32-CAM uc640 PCM5102 uc624ub514uc624 DAC uc608uc815 uc5f0uacb0 (I2S)
+- **ESP32-CAM I2S ud540**:
+  - BCLK: GPIO 26 (ud504ub85cuc81dud2b8 uc2dcuc791 uc2dc ud560ub2f9 uc608uc815)
+  - LRCLK/WS: GPIO 25 (ud504ub85cuc81dud2b8 uc2dcuc791 uc2dc ud560ub2f9 uc608uc815)
+  - DOUT/DIN: GPIO 33 (ud504ub85cuc81dud2b8 uc2dcuc791 uc2dc ud560ub2f9 uc608uc815)
+
+- **PCM5102 DAC ud540**:
+  - VCC: 3.3V
+  - GND: GND
+  - BCK: BCLK
+  - DIN: DOUT/DIN
+  - LCK: LRCLK/WS
+  - SCK: GND (PCM5102 ub9c8uc2a4ud130 ubaa8ub4dc ube44ud65cuc131ud654)
+  - FMT: GND (I2S ud45cuc900 ud3ecub9f7)
+
+- **TPA3116 uc5f0uacb0**:
+  - uc608uc815 uc5f0uacb0 uc815ubcf4ub294 ud504ub85cuc81dud2b8 uc2dcuc791 uc2dc ucd94uac00 uc608uc815
+
+## uc8fcuc758uc0acud56d
+- ubaa8ub4e0 uc5f0uacb0uc5d0uc11c GNDub294 ubc18ub4dcuc2dc uacf5ud1b5uc73cub85c uc5f0uacb0ud574uc57c ud569ub2c8ub2e4.
+- ESP32-CAMuc740 uc81cud55cub41c GPIO uc218ub97c uace0ub824ud558uc5ec ud540 uc120ud0dduc5d0 uc8fcuc758ud574uc57c ud569ub2c8ub2e4.
+- uc804uc6d0 uc5f0uacb0 uc2dc uc801uc808ud55c uc804uc555 uaddcuaca9uc744 ud655uc778ud574uc57c ud569ub2c8ub2e4.
+
+## uc8fcuae30uc801 uc5c5ub370uc774ud2b8
+- ub9c8uc9c0ub9c9 uc5c5ub370uc774ud2b8: 2025-04-02

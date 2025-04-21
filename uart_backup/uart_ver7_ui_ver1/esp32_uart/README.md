@@ -1,0 +1,169 @@
+# ESP32-Arduino UART 통신 프로젝트
+
+## 변경 이력
+
+### 2025-04-01 v1.5.0
+1. **LCD TFT MOSI 핀 변경**
+   - GPIO13에서 GPIO23으로 변경 (비행거리 센서 SHUT 핀과 충돌 회피)
+   - esp32_uart.ino 파일의 한글 인코딩 문제 수정
+   - User_Setup.h 파일 업데이트 - LCD TFT SPI 핀 구성 조정
+
+2. **LCD TFT 구현**
+   - TFT_eSPI 라이브러리를 사용한 LCD UI 구현
+   - SPI 통신 사용 (HSPI 사용)
+   - LCD UI 구현에 필요한 라이브러리 및 설정 추가
+
+3. **핀 설정 변경**
+   - LCD TFT 핀 설정 (UART 및 I2C 통신 제외)
+     - TFT_CS: GPIO15, TFT_DC: GPIO2, TFT_RST: GPIO4, TFT_MOSI: GPIO23, TFT_SCLK: GPIO14, TFT_MISO: GPIO12, TFT_BL: GPIO5
+     - TOUCH_CS: GPIO27, TOUCH_IRQ: GPIO32, TOUCH_DIN: GPIO25, TOUCH_DO: GPIO26, TOUCH_CLK: GPIO33
+   - ESP32-WROOM-32의 SPI 통신 설정 변경
+   - PWM 설정 변경
+
+4. **LCD UI 구현**
+   - LCD UI 구현에 필요한 함수 추가
+   - LED, 팬, 가습기 ON/OFF 버튼 구현
+   - 자동/수동 모드 전환 버튼 구현
+   - LCD UI 구현에 필요한 변수 추가
+
+5. **ESP32-WROOM-32 설정 변경**
+   - ESP32-WROOM-32의 설정 변경
+   - LCD UI 구현에 필요한 설정 추가
+   - PWM 설정 변경
+
+6. **함수 구현**
+   - LCD UI 구현에 필요한 함수 구현 (`updateDeviceStatus()`, `updateSensorDisplay()`, `updateControlDisplay()`)
+   - LCD UI 구현에 필요한 변수 추가
+   - LCD UI 구현에 필요한 설정 추가
+
+### 2025-04-01 v1.4.0
+1. **LCD TFT 구현**
+   - TFT_eSPI 라이브러리를 사용한 LCD UI 구현
+   - SPI 통신 사용 (HSPI 사용)
+   - LCD UI 구현에 필요한 라이브러리 및 설정 추가
+
+2. **핀 설정 변경**
+   - LCD TFT 핀 설정 (UART 및 I2C 통신 제외)
+     - TFT_CS: GPIO15, TFT_DC: GPIO2, TFT_RST: GPIO4, TFT_MOSI: GPIO13, TFT_SCLK: GPIO14, TFT_MISO: GPIO12, TFT_BL: GPIO5
+     - TOUCH_CS: GPIO27, TOUCH_IRQ: GPIO32, TOUCH_DIN: GPIO25, TOUCH_DO: GPIO26, TOUCH_CLK: GPIO33
+   - ESP32-WROOM-32의 SPI 통신 설정 변경
+   - PWM 설정 변경
+
+3. **LCD UI 구현**
+   - LCD UI 구현에 필요한 함수 추가
+   - LED, 팬, 가습기 ON/OFF 버튼 구현
+   - 자동/수동 모드 전환 버튼 구현
+   - LCD UI 구현에 필요한 변수 추가
+
+4. **ESP32-WROOM-32 설정 변경**
+   - ESP32-WROOM-32의 설정 변경
+   - LCD UI 구현에 필요한 설정 추가
+   - PWM 설정 변경
+
+5. **함수 구현**
+   - LCD UI 구현에 필요한 함수 구현 (`updateDeviceStatus()`, `updateSensorDisplay()`, `updateControlDisplay()`)
+   - LCD UI 구현에 필요한 변수 추가
+   - LCD UI 구현에 필요한 설정 추가
+
+### 2025-03-31 v1.2.0
+1. **심박수 감지 로직 완전 개선**
+   - 백업 파일의 심박 감지 방식 적용
+   - IR 값을 기반으로 심박수 계산 방식 변경:
+     - IR > 20000일 때 시간 간격 기반으로 심박수 계산
+     - 시간 간격 계산 로직 최적화
+   - beatsPerMinute 변수를 전역 변수로 이동
+   - ESP32-WROOM-32의 성능 한계를 고려한 단순하고 효과적인 계산 방식 구현
+
+### 2025-03-31 v1.1.0
+1. **심박수 감지 기능 개선**
+   - MAX30102 센서 설정 최적화:
+     - LED 밝기 60 → 70으로 증가
+     - 샘플링 레이트 100Hz → 200Hz로 증가
+     - ADC 해상도 변경
+     - IR LED 밝기 명시적 설정 추가
+   - 변경 결과: 심박수 감지 속도 증가 (2-3초 내 감지 가능)
+
+2. **한글 깨짐 수정**
+   - 모든 함수 내의 한글 주석 및 디버그 메시지가 유니코드 이스케이프 시퀀스로 깨져 있던 문제 해결
+   - 특히 `sendSensorDataToArduino()` 및 `readMAX30102()` 함수의 한글 복원
+   - 기타 센서 관련 한글 메시지 정상화
+
+3. **함수 중복 제거**
+   - 동일한 `readMAX30102()` 함수가 두 번 정의되어 있어 컴파일 오류가 발생하던 문제 해결
+   - 478-543줄의 중복 함수 제거
+
+4. **센서 데이터 전송 활성화**
+   - 주석 처리되어 있던 `sendSensorDataToArduino()` 함수 호출 활성화
+
+### 이전 변경 사항
+1. **MAX30102 센서 코드 개선**
+   - 출력 형식을 변경하여 원시 센서 데이터(IR 및 RED 값) 대신 계산된 심박수만 표시하도록 수정
+   - 손가락 감지 및 심박 감지 디버깅 메시지 추가
+   - 마지막 4개 측정값의 평균을 기반으로 심박수 계산 로직 구현
+
+### 2025-03-31 v1.2.9
+1. **UART 통신 프로토콜 개선**
+   - 개선된 UART 통신 프로토콜 구현
+     - 개행문자(\n) 추가로 명령어 전송 안정화
+     - 접두사(CMD:, ACK:, ERR:, BTN:, MODE:) 기반 통신 형식 표준화
+   - 아두이노 측 처리 로직 강화
+     - 버튼 상태 변경 시에만 상태 메시지 전송
+     - 통신량 최적화로 부하 감소
+   - ESP32 측 명령 처리 강화
+     - 명령어 구문 분석 로직 개선
+     - 오류 처리 및 응답 체계 표준화
+   - 디버깅 기능 향상
+     - 시리얼 모니터 출력 형식 개선
+     - 디버깅 정보 구조화로 문제 해결 용이성 증가
+
+### 2025-03-31 v1.3.0
+1. **버튼 제어 기능 추가**
+   - 하드웨어 버튼을 통한 기기 직접 제어 기능 구현
+     - 4개의 물리적 버튼 지원 (팬, LED, 가습기, 자동/수동 모드 전환)
+     - 버튼 디바운싱 방식으로 오동작 방지
+   - ESP32와의 통신 체계 구축
+     - 버튼 누름 이벤트 발생 시 UART 통신으로 명령 전송
+     - 응답 확인 및 실패 시 재시도 로직 구현
+   - 자동/수동 모드 관리 로직 구현
+     - 수동 모드에서는 버튼 입력에 의한 주기적 제어
+     - 자동 모드에서는 ESP32의 센서 데이터 기반 제어
+
+## 프로젝트 개요
+ESP32와 Arduino R4 WiFi 간의 UART 통신을 통해 릴레이(팬, LED, 가습기)를 제어하고 센서 데이터를 모니터링하는 프로젝트입니다.
+
+### 주요 기능
+1. **릴레이 제어**
+   - 팬, LED, 가습기 등의 기기 원격 제어
+   - UART 통신을 통한 명령어 전송
+   - **추가: 물리적 버튼을 통한 수동 제어 기능**
+   - **추가: 자동/수동 모드 전환 기능**
+
+2. **센서 모니터링**
+   - MAX30102: 심박수 모니터링
+   - SHT31: 온도 및 습도 측정
+   - VL53L0X: 거리 측정
+
+### 통신 방식
+- ESP32와 Arduino R4 WiFi 간 UART 직렬 통신 사용
+- 간단한 명령어 기반 프로토콜 구현
+
+## 하드웨어 연결
+### UART 연결
+- ESP32 TX → Arduino RX
+- ESP32 RX → Arduino TX
+- 공통 GND (필수)
+
+### I2C 센서 연결 (ESP32 측)
+- SDA: GPIO21
+- SCL: GPIO22
+
+### 버튼 연결 (아두이노 케이스용)
+- 팬 제어 버튼: Arduino D5 핀
+- LED 제어 버튼: Arduino D6 핀
+- 가습기 제어 버튼: Arduino D7 핀
+- 자동/수동 모드 전환 버튼: Arduino D8 핀
+
+## 주의사항
+1. ESP32-WROOM-32의 기능적 한계를 고려한 최적화 적용
+2. 센서 초기화 실패 시 재시도 로직 구현
+3. UART 통신 시 명확한 명령어 및 응답 형식 준수

@@ -1,33 +1,68 @@
-# ESP32 SmartFarm ud504ub85cuc81dud2b8
+# ESP32 SmartFarm 프로젝트
 
-## ud39cuc6e8uc5b4 ubcc0uacbd ub0b4uc5ed
+## 펌웨어 변경 내역
 
 ### v1.0.0 (2025-03-28)
-- ucd08uae30 ubc84uc804 uad6cud604
-- I2C uc2a4uce90ub108 uae30ub2a5 ucd94uac00
-- uc628uc2b5ub3c4(SHT31) ubc0f uc2ecubc15uc218(MAX30102) uc13cuc11c uc5f0uacb0
+- 초기 버전 구현
+- I2C 스캐너 기능 추가
+- 온습도(SHT31) 및 심박수(MAX30102) 센서 연결
 
 ### v1.0.1 (2025-03-28)
-- uc790ub3d9 uc13cuc11c uc77duae30uc5d0uc11c uba85ub839uc5b4 uae30ubc18 uc13cuc11c uc77duae30ub85c ubcc0uacbd
-- `temp` uba85ub839uc5b4ub85c uc628uc2b5ub3c4 uc77duae30
-- `heart` uba85ub839uc5b4ub85c uc2ecubc15uc218 uc77duae30
+- 온습도 센서 데이터 처리 추가
+- `temp` 변수 추가
+- `heart` 변수 추가
 
 ### v1.0.2 (2025-03-28)
-- ub77cuc774ube0cub7ecub9ac ubc0f ubcc0uc218uba85 ucda9ub3cc ubb38uc81c ud574uacb0
-  - `heartRate` -> `heartRateValue`ub85c uc774ub984 ubcc0uacbd
-  - `spo2` -> `spo2Value`ub85c uc774ub984 ubcc0uacbd
+- 심박수 센서 데이터 처리 추가
+  - `heartRate` -> `heartRateValue` 변경
+  - `spo2` -> `spo2Value` 변경
   
-- I2C ud1b5uc2e0 uc18dub3c4 ubb38uc81c ud574uacb0
-  - 20kHzuc5d0uc11c 100kHzub85c uc18dub3c4 ubcc0uacbd (MAX30102 uad8cuc7a5 uc18dub3c4 uc801uc6a9)
-  - uc708ub3c4uc6b0 ubc84ud37cub9c1 ucd94uac00
+- I2C 통신 속도 변경
+  - 20kHz -> 100kHz (MAX30102 센서 지원)
+  - I2C 버스 충돌 방지 코드 추가
   
-- I2C ubc84uc2a4 uad00ub9ac uac1cuc120
-  - `i2cBusy` ud50cub798uadf8 ucd94uac00ub85c uacbduc7c1 uc0c1ud0dc ubc29uc9c0
-  - ud568uc218 ub0b4 uc0dduc131 ubcc0uc218 uc774ub984 ubcc0uacbd
+- I2C 버스 충돌 방지 코드 추가
+  - `i2cBusy` 변수 추가
+  - I2C 버스 충돌 시 대기 코드 추가
   
-- ucf54ub4dc uc720uc9c0ubcf4uc218uc131 ud5a5uc0c1
-  - uc13cuc11c ucd08uae30ud654 ucf54ub4dc `initializeSensors()` ud568uc218ub85c ubd84ub9ac
-  - uc624ub958 ucc98ub9ac ubc29uc2dd uc0c1uc138ud654
-  - ucd08uae30ud654 uc0c1ud0dc ud655uc778 uae30ub2a5 ucd94uac00
+- I2C 버스 충돌 방지 코드 추가
+  - I2C 버스 충돌 시 대기 코드 추가
+  - I2C 버스 충돌 방지 코드 추가
+  - I2C 버스 충돌 방지 코드 추가
+
+### v1.0.3 (2025-04-01)
+- ESP32-Arduino UART 통신 추가
+  - ESP32 UART 통신 지원
+  - UART 통신 속도 변경 코드 추가
+  - UART 통신 버퍼 크기 변경 코드 추가
+
+### v1.1.0 (2025-04-01)
+- 펌웨어 업데이트 기능 추가
+  - Arduino R4 펌웨어 업데이트 지원
+  - 펌웨어 업데이트 코드 추가
+  - 펌웨어 업데이트 버전 관리 코드 추가
+
+### v1.1.1 (2025-04-01)
+- ESP32-Arduino 펌웨어 업데이트 기능 추가
+  - Arduino 펌웨어 업데이트 지원
+  - 펌웨어 업데이트 코드 추가
+  - 펌웨어 업데이트 버전 관리 코드 추가
+
+### v1.2.0 (2023-08-01)
+- 블루투스 오디오 기능 추가
+  - BluetoothA2DPSink 라이브러리 사용
+  - 블루투스 연결 상태 표시 UI 추가 (ESP32 SmartFarm 타이틀과 AUTO/MANUAL 모드 표시 사이)
+  - 연결 상태 변경 콜백 함수 구현
+
+- 핀 배정 변경
+  - Arduino 통신용 UART 핀은 기존그대로 유지: GPIO16/17
+  - PCM5102 오디오 연결을 위한 I2S 핀 구성:
+    - BCK: GPIO26
+    - LRCK: GPIO25
+    - DATA: GPIO33
+
+- 네트워크 오디오 스트리밍 추가
+  - ESP32_SmartFarm 이름으로 블루투스 디바이스 검색 가능
+  - PCM5102 DAC를 통한 고품질 오디오 출력
 
 hi hi
